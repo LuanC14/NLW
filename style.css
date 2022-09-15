@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+/*Importando a fonte "Inter" do site google fonts*/
+
+* {
+    margin: 0;
+    padding: 0;
+    /*Essas duas propiedades serve para remover a margem e o padding que é dado originalmente pelos navegadores*/
+    box-sizing: border-box;
+    /*Box-Sizing:border-box serve para manter o container sempre do tamanho determinado*/
+}
+
+ul {
+    list-style: none;
+    /*Removendo a estilização padrão de listas*/
+}
+
+body {
+    background-image: url(./assets/background-image.jpg);
+    background-position: top center;
+    /*Imagem alinhada no topo e centralizada*/
+    background-size: 100% auto;
+    /*deu tamanho de 100% na horizontal e automático na vertical*/
+    background-repeat: no-repeat;
+    /*A imagem iria repetir para preencher toda a tela*/
+    background-color: #121214;
+    /*Cor para preencher o espaço em branco por causa do no-repeat*/
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+}
+
+header {
+    margin-top: 32px;
+    height: 120px;
+}
+
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    border-radius: 50%;
+    display: flex;
+    padding: 4px;
+    /*o padding de 4px serve para acrescentar 4 pixels em sua dimensão, fazendo assim, aparecer a borda colorida do linear-gradient, já que a imagem preencherá os 100% iniciais, no caso 120px*/
+    transition: transform .3s;
+    /*Caso seja aplicada o efeito transform, haverá uma transisão de 3 milisegundos*/
+
+}
+
+header div:hover {
+    transform: scale(1.1);
+    /*Quando passar o mouse em cima dessa div, haverá o efeito transform, a numeração 1.1 remete o grau do efeito*/
+
+}
+
+header img {
+    width: 100%;
+    /*width de 100% significa que a imagem deve ficar preenchendo os 100% de onde ela está*/
+    border-radius: 50%;
+}
+
+
+main {
+
+    max-width: 580px;
+    /*Largura máxima do main é 580px*/
+    width: 90%;
+    /*Porém seu conteúdo terá 90% da largura máxima dada anteriomente*/
+    margin: 32px auto;
+    /*Com a largura sendo 90% de 580px, a margem automática será de 10% de 580px*/
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+section {
+    color: white;
+    padding-top: 4px;
+    /*Diferente do header, a borda aqui será somente no eixo superior, de 4px*/
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    border-radius: 10px;
+}
+
+section div {
+    background: #2A2634;
+    border-radius: 8px;
+    /*Essa borda de 8px dará um efeito bacana pois tem 2px a menos que o section em que ela se encontra*/
+    padding: 32px;
+    padding-top: 24px;
+
+}
+
+section p {
+    color: #A1A1AA;
+    letter-spacing: -0.18px;
+}
+
+section ul {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    /*Todos os elementos da lista, serão flexiveis, estarão lado a lado, com distancia entre eles de 16px e caso as dimensões da janela diminua, os itens eles não aumentarão o tamanho das divs ou passará sobre ela, mas sim quebrarão as linhas*/
+}
+
+section ul li {
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+.games-list img {
+    border-radius: 8px;
+    width: 90px;
+}
+
+.channels-list img {
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443E54;
+}
+
+/*Animação*/
+
+header div {
+    animation: fromTop .6s .2s backwards;
+    /*
+    fromTop é o nome que eu dei a animação, .7s é a duração dela
+    .4s é o delay para ela começar por motivos de ter que esperar a página carregar todas suas propiedades, deixando harmônico backwards serve para guardar e aplicar a animação já de inicio, pois como existe o delay, a foto iria aparecer inicialmente para depois sumir com a aplicação do efeito*/
+}
+
+main section {
+    animation: fromBot .6s backwards;
+}
+
+main section :nth-child(1) {
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: .4s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .7s;
+}
+
+@keyframes fromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fromBot {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
