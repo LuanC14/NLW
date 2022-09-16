@@ -127,7 +127,7 @@ section ul li:hover {
 /*Animação*/
 
 header div {
-    animation: fromTop .6s .2s backwards;
+    animation: fromTop .6s .5s backwards;
     /*
     fromTop é o nome que eu dei a animação, .7s é a duração dela
     .4s é o delay para ela começar por motivos de ter que esperar a página carregar todas suas propiedades, deixando harmônico backwards serve para guardar e aplicar a animação já de inicio, pois como existe o delay, a foto iria aparecer inicialmente para depois sumir com a aplicação do efeito*/
@@ -138,7 +138,7 @@ main section {
 }
 
 main section :nth-child(1) {
-    animation-delay: 0;
+    animation-delay: .1s;
 }
 
 main section:nth-child(2) {
